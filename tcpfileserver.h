@@ -17,12 +17,19 @@ public slots:
     void acceptConnection();
     void updateServerProgress();
     void displayError(QAbstractSocket::SocketError socketError);
+
 private:
     QProgressBar     *serverProgressBar;
     QLabel           *serverStatusLabel;
     QPushButton      *startButton;
     QPushButton      *quitButton;
     QDialogButtonBox *buttonBox;
+
+    // 新增 IP 和端口欄位
+    QLabel           *ipLabel;
+    QLabel           *portLabel;
+    QLineEdit        *ipLineEdit;
+    QLineEdit        *portLineEdit;
 
     QTcpServer       tcpServer;
     QTcpSocket       *tcpServerConnection;
